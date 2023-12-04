@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="attemptLogin()">Entrar</button>
+
+        <p class="error-message" id="errorMessage"></p>
+    </form>
+
+    <script>
+        function attemptLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Aqui você faria uma chamada para o seu back-end para verificar as credenciais.
+            // Este é apenas um exemplo básico para demonstração.
+            if (username === 'usuario' && password === 'senha') {
+                // Redirecionar para a página principal ou executar ação desejada após o login bem-sucedido.
+                alert('Login bem-sucedido! Redirecionando...');
+            } else {
+                document.getElementById('errorMessage').innerText = 'Credenciais inválidas. Tente novamente.';
+            }
+        }
+    </script>
+
+</body>
+</html>
